@@ -9,8 +9,6 @@ use Illuminate\Support\Facades\Http;
 class MovieController extends Controller
 {
 
-    public $search = '';
-
     public function index()
     {
         $moviePop  = Http::withToken(config('services.tmdb.token'))->get(config('services.tmdb.url') . '/movie/popular')->json();
